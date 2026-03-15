@@ -19,21 +19,21 @@ export default function Hero() {
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden pt-12 sm:pt-0 bg-[#0A0A0A]">
       {/* Animated Background Orbs - Orange */}
       <motion.div
-        className="absolute top-32 -right-40 w-96 h-96 rounded-full mix-blend-multiply filter blur-[120px] opacity-15"
+        className="hidden md:block absolute top-32 -right-40 w-96 h-96 rounded-full mix-blend-multiply filter blur-[120px] opacity-15"
         style={{ background: 'radial-gradient(circle, rgba(255,93,0,0.4) 0%, transparent 70%)' }}
         animate={{ x: [0, 100, 0], y: [0, 50, 0] }}
         transition={{ duration: 20, repeat: Infinity }}
       />
       {/* Animated Background Orbs - Purple */}
       <motion.div
-        className="absolute top-1/2 -left-40 w-96 h-96 rounded-full mix-blend-multiply filter blur-[150px] opacity-15"
+        className="hidden md:block absolute top-1/2 -left-40 w-96 h-96 rounded-full mix-blend-multiply filter blur-[150px] opacity-15"
         style={{ background: 'radial-gradient(circle, rgba(140,13,194,0.4) 0%, transparent 70%)' }}
         animate={{ x: [0, -100, 0], y: [0, -50, 0] }}
         transition={{ duration: 25, repeat: Infinity }}
       />
       {/* Animated Background Orbs - Blue */}
       <motion.div
-        className="absolute -bottom-32 right-1/4 w-96 h-96 rounded-full mix-blend-multiply filter blur-[130px] opacity-15"
+        className="hidden md:block absolute -bottom-32 right-1/4 w-96 h-96 rounded-full mix-blend-multiply filter blur-[130px] opacity-15"
         style={{ background: 'radial-gradient(circle, rgba(0,143,205,0.4) 0%, transparent 70%)' }}
         animate={{ x: [0, 50, 0], y: [0, -100, 0] }}
         transition={{ duration: 22, repeat: Infinity }}
@@ -64,38 +64,25 @@ export default function Hero() {
 
             {/* Headline */}
             <motion.div variants={fadeInUp} className="space-y-3">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-syne text-white leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-syne text-white leading-tight">
                 Crescimento Digital Comprovado para B2B em{' '}
-                <span className="gradient-text font-outfit">2025</span>
+                <span className="gradient-text font-outfit">2026</span>
               </h1>
             </motion.div>
 
             {/* Subheading */}
-            <motion.p variants={fadeInUp} className="text-lg sm:text-xl text-[#E5E5E5] leading-relaxed font-outfit">
-              Consultoria especializada em Angola com ROI mensurável. Crescimento que se prova nos seus
-              números.
+            <motion.p variants={fadeInUp} className="text-base sm:text-lg lg:text-xl text-[#E5E5E5] leading-relaxed font-outfit">
+              <span className="sm:hidden">Consultoria especializada em Angola com ROI comprovado.</span>
+              <span className="hidden sm:inline">Consultoria especializada em Angola com ROI mensurável. Crescimento que se prova nos seus números.</span>
             </motion.p>
 
-            {/* Pills */}
-            <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
-              {['ROI Comprovado', 'Suporte 24/7', 'Especialistas Angola'].map((pill) => (
-                <motion.span
-                  key={pill}
-                  className="px-4 py-2 bg-white/5 text-[#E5E5E5] rounded-full text-sm font-outfit border border-white/10 transition-colors"
-                  whileHover={{ scale: 1.05, backgroundColor: '#FF5D00', color: '#fff', borderColor: '#FF5D00' }}
-                >
-                  {pill}
-                </motion.span>
-              ))}
-            </motion.div>
-
             {/* CTA Buttons */}
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 pt-4">
+            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-3 pt-2">
               <motion.a
                 href={getWhatsAppUrl(WHATSAPP_MESSAGES.hero)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-gradient-orange-purple text-white rounded-lg font-syne font-bold text-base sm:text-lg shadow-lg shadow-[rgba(255,93,0,0.3)] hover-lift"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-gradient-orange-purple text-white rounded-lg font-syne font-bold text-base sm:text-lg shadow-lg shadow-[rgba(255,93,0,0.3)] hover-lift"
                 whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(255, 93, 0, 0.5)' }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -105,12 +92,25 @@ export default function Hero() {
 
               <motion.a
                 href="#pacotes"
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 border-2 border-[#FF5D00] text-[#FF5D00] rounded-lg font-syne font-bold text-base sm:text-lg hover:bg-gradient-orange-purple hover:text-white hover:border-transparent transition-all"
+                className="hidden sm:inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 border-2 border-[#FF5D00] text-[#FF5D00] rounded-lg font-syne font-bold text-base sm:text-lg hover:bg-gradient-orange-purple hover:text-white hover:border-transparent transition-all"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Ver Pacotes
               </motion.a>
+            </motion.div>
+
+            {/* Trust Badges */}
+            <motion.div variants={fadeInUp} className="flex flex-wrap gap-3 pt-2">
+              {['20+ Clientes', 'ROI Comprovado', 'Suporte 24/7'].map((badge) => (
+                <motion.div
+                  key={badge}
+                  className="flex items-center gap-2 px-3 py-2 bg-white/5 text-[#E5E5E5] rounded-full text-xs sm:text-sm font-outfit border border-white/10"
+                >
+                  <span className="text-[#FF5D00] font-bold">✓</span>
+                  <span>{badge}</span>
+                </motion.div>
+              ))}
             </motion.div>
           </motion.div>
 
