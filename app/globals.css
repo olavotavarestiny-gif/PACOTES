@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-outfit);
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-syne);
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+/* Smooth scroll behavior */
+html {
+  @apply scroll-smooth;
+}
+
+/* Custom scrollbar - Dark theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FF5D00 0%, #8C0DC2 50%, #008FCD 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  filter: brightness(1.2);
+}
+
+/* Gradient text utility - Orange to Purple */
+.gradient-text {
+  @apply bg-gradient-to-r from-[#FF5D00] via-[#8C0DC2] to-[#FF5D00] bg-clip-text text-transparent;
+}
+
+/* Gradient text - Purple to Blue */
+.gradient-text-secondary {
+  @apply bg-gradient-to-r from-[#8C0DC2] to-[#008FCD] bg-clip-text text-transparent;
+}
+
+/* Gradient text - Tricolor */
+.gradient-text-trio {
+  @apply bg-gradient-to-r from-[#FF5D00] via-[#8C0DC2] to-[#008FCD] bg-clip-text text-transparent;
+}
+
+/* Gradient text com -webkit-text-fill-color para compatibilidade */
+.gradient-text-clip {
+  background: linear-gradient(135deg, #FF5D00 0%, #8C0DC2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Focus ring for accessibility - Dark theme */
+.focus-ring:focus {
+  @apply outline-none ring-2 ring-offset-2 ring-offset-[#0A0A0A] ring-[#FF5D00]/50;
+}
+
+/* Button transitions */
+button, a {
+  @apply transition-all duration-300 ease-out;
+}
+
+/* Hover lift effect */
+.hover-lift:hover {
+  @apply -translate-y-2 transition-transform duration-300;
+}
+
+/* Card shadow elevation - Dark with glow */
+.card-shadow {
+  @apply shadow-lg transition-shadow duration-300;
+}
+
+.card-shadow:hover {
+  @apply shadow-2xl;
+}
+
+/* Glassmorphic card - Base */
+.card-glass {
+  backdrop-filter: blur(24px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 300ms ease-out;
+}
+
+.card-glass:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Gradient border utility */
+.border-gradient-orange-purple {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(#0A0A0A, #0A0A0A) padding-box,
+              linear-gradient(135deg, #FF5D00 0%, #8C0DC2 100%) border-box;
+}
+
+.border-gradient-purple-blue {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(#0A0A0A, #0A0A0A) padding-box,
+              linear-gradient(135deg, #8C0DC2 0%, #008FCD 100%) border-box;
+}
+
+/* Glow effects */
+.glow-orange {
+  box-shadow: 0 0 30px rgba(255, 93, 0, 0.3);
+}
+
+.glow-orange:hover {
+  box-shadow: 0 0 40px rgba(255, 93, 0, 0.5);
+}
+
+.glow-purple {
+  box-shadow: 0 0 30px rgba(140, 13, 194, 0.3);
+}
+
+.glow-purple:hover {
+  box-shadow: 0 0 40px rgba(140, 13, 194, 0.5);
+}
+
+.glow-blue {
+  box-shadow: 0 0 30px rgba(0, 143, 205, 0.3);
+}
+
+/* Muted text colors for dark theme */
+.text-muted {
+  @apply text-[#A0A0A0];
+}
+
+.text-muted-light {
+  @apply text-[#E5E5E5];
+}
