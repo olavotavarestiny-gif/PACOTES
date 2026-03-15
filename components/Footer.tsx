@@ -11,8 +11,6 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const footerLinks = {}
-
   return (
     <footer className="bg-[#0F0F0F] text-[#E5E5E5] border-t border-white/5">
       {/* Main Footer */}
