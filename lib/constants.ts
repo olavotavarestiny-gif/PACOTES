@@ -15,6 +15,7 @@ export const getWhatsAppUrl = (message: string) => {
 export const WHATSAPP_MESSAGES = {
   header: 'Olá Mazanga! Vi a proposta de pacotes 2025 e gostaria de agendar uma reunião estratégica para discutir como podem ajudar o meu negócio.',
   hero: 'Olá! Gostaria de agendar uma reunião gratuita para discutir como a Mazanga Marketing pode ajudar o meu negócio a crescer.',
+  floating: 'Olá Mazanga! Gostaria de saber mais sobre os vossos serviços.',
   fundacao: 'Olá! Vi a proposta e tenho interesse no Pacote Fundação Digital Express (2.500.000 Kz). Gostaria de agendar reunião.',
   essential: 'Olá! Vi a proposta e tenho interesse no Pacote Essential (8.787.000 Kz / 3 meses). Gostaria de agendar reunião.',
   growth: 'Olá! Vi a proposta e tenho interesse no Pacote Growth Premium (29.700.000 Kz / 6 meses). Gostaria de agendar reunião.',

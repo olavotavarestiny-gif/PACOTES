@@ -12,7 +12,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-[#0F0F0F] text-[#E5E5E5] border-t border-white/5">
+    <footer id="contactos" className="bg-[#0F0F0F] text-[#E5E5E5] border-t border-white/5">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
         <motion.div

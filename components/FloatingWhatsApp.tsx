@@ -3,11 +3,12 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { MessageCircle } from 'lucide-react'
+import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/lib/constants'
 
 export default function FloatingWhatsApp() {
   const [showTooltip, setShowTooltip] = useState(false)
 
-  const whatsappUrl = 'https://wa.me/244942277576?text=Olá Mazanga! Gostaria de saber mais sobre os vossos serviços.'
+  const whatsappUrl = getWhatsAppUrl(WHATSAPP_MESSAGES.floating)
 
   return (
     <motion.div

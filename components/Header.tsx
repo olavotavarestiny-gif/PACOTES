@@ -18,11 +18,11 @@ export default function Header() {
   }, [])
 
   const navLinks = [
-    { label: 'Fundação', href: '#fundacao' },
-    { label: 'Essential', href: '#essential' },
-    { label: 'Growth', href: '#growth' },
+    { label: 'Fundação', href: '#pacotes' },
+    { label: 'Essential', href: '#pacotes' },
+    { label: 'Growth', href: '#pacotes' },
     { label: 'Comparação', href: '#comparacao' },
-    { label: 'Contacto', href: '#contacto' },
+    { label: 'Contacto', href: '#contactos' },
   ]
 
   return (
